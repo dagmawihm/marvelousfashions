@@ -113,7 +113,7 @@
                     Stay connected with us on the go. Download our mobile app for exclusive offers and updates.
                 </p>
                 <div class="p-t-18">
-                    <a href="https://www.marvelousfashions/app/marvelousfashions.apk" class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+                    <a href="https://www.marvelousfashions.com/app/marvelousfashions.apk" class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
                         Download Now
                     </a>
                 </div>

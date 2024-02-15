@@ -1,11 +1,13 @@
 <?php
 session_start();
 if (!isset($_SESSION['id'])) {
-    header("Location: /marvelousfashions/login");
+    header("Location: ../login");
+    //header("Location: /marvelousfashions/login");
 }
 
 if (!isset($_GET['url'])) {
-    header("Location: /marvelousfashions/");
+    header("Location: ../products");
+    //header("Location: /marvelousfashions/");
 }
 
 include_once "../assets/inc/db.php";

@@ -2,7 +2,8 @@
 session_start();
 
 if (!isset($_SESSION['id'])) {
-	header("Location: /marvelousfashions/login");
+	header("Location: ../login");
+	//header("Location: /marvelousfashions/login");
 }
 
 ?>
