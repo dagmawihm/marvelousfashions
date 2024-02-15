@@ -2,6 +2,14 @@
 session_start();
 if (!isset($_SESSION['id'])) {
 	header("Location: ../login");
+	if (isset($_SESSION['id'])) {
+		include_once "logout.php";
+
+		if (isset($_POST['logout_btn'])) {
+			// Call the logout function
+			logout();
+		}
+	}
 	//header("Location: /marvelousfashions/login");
 
 }

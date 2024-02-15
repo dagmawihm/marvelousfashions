@@ -3,14 +3,6 @@
 
 <?php
 include_once "db.php";
-if (isset($_SESSION['id'])) {
-    include_once "logout.php";
-
-    if (isset($_POST['logout_btn'])) {
-        // Call the logout function
-        logout();
-    }
-}
 if (isset($_COOKIE["cart"])) {
     $cartno = (substr_count($_COOKIE["cart"], "i")) / 2;
 } else {

@@ -1,5 +1,13 @@
 <?php
 session_start();
+if (isset($_SESSION['id'])) {
+    include_once "logout.php";
+
+    if (isset($_POST['logout_btn'])) {
+        // Call the logout function
+        logout();
+    }
+}
 if (!isset($_SESSION['id'])) {
     header("Location: ../login");
     //header("Location: /marvelousfashions/login");
@@ -705,9 +713,9 @@ while ($row = mysqli_fetch_array($resultdisplayproduct)) {
     </section>
 
     <script type="text/javascript">
-        let images = <?php echo (count($imgpositions));?>;
+        let images = <?php echo (count($imgpositions)); ?>;
 
-        function beforedeleteimg(imgname){
+        function beforedeleteimg(imgname) {
             images--;
             deleteimg(imgname);
         }
@@ -731,12 +739,12 @@ while ($row = mysqli_fetch_array($resultdisplayproduct)) {
             var div = document.getElementById('img_preview');
 
 
-            if (parseInt($fileUpload.get(0).files.length)+images > 5) {
+            if (parseInt($fileUpload.get(0).files.length) + images > 5) {
                 alert("You are only allowed to upload a maximum of 5 images, choose only 5 images again");
                 document.getElementById("upload_image").click();
                 returnToPreviousPage();
 
-            } else if (images+parseInt($fileUpload.get(0).files.length) < 1) {
+            } else if (images + parseInt($fileUpload.get(0).files.length) < 1) {
                 alert("You can't leave the image field empty");
                 document.getElementById("upload_image").click();
                 returnToPreviousPage();

@@ -1,5 +1,13 @@
 <?php
 session_start();
+if (isset($_SESSION['id'])) {
+    include_once "logout.php";
+
+    if (isset($_POST['logout_btn'])) {
+        // Call the logout function
+        logout();
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

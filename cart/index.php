@@ -1,5 +1,13 @@
 <?php
 session_start();
+if (isset($_SESSION['id'])) {
+	include_once "logout.php";
+
+	if (isset($_POST['logout_btn'])) {
+		// Call the logout function
+		logout();
+	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,9 +53,9 @@ session_start();
 
 				<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
 					<div class="m-l-25 m-r--38 m-lr-0-xl">
-					<h1 class="mtext-109 cl2 p-b-30">
-                            Cart
-                        </h1>
+						<h1 class="mtext-109 cl2 p-b-30">
+							Cart
+						</h1>
 						<div class="wrap-table-shopping-cart">
 
 

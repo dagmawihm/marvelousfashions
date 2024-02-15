@@ -1,5 +1,13 @@
 <?php
 session_start();
+if (isset($_SESSION['id'])) {
+    include_once "logout.php";
+
+    if (isset($_POST['logout_btn'])) {
+        // Call the logout function
+        logout();
+    }
+}
 include_once "../assets/inc/inputSanitizer.php";
 include_once "../assets/inc/db.php";
 
@@ -59,12 +67,10 @@ if (isset($_POST['login'])) {
             }
             header("Location: ../");
             exit();
-        }
-        else {
+        } else {
             echo "Login failed. Invalid password or email.";
         }
-    }
-    else {
+    } else {
         echo "Login failed. Invalid password or email.";
     }
 }

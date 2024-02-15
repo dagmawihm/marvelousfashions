@@ -1,5 +1,13 @@
 <?php
 session_start();
+if (isset($_SESSION['id'])) {
+	include_once "logout.php";
+
+	if (isset($_POST['logout_btn'])) {
+		// Call the logout function
+		logout();
+	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +92,7 @@ session_start();
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloremque esse repellat omnis vel doloribus eum explicabo velit corporis eligendi fugit eaque quasi quod, nulla rem unde debitis ad ut!
 							</p>
 							<span class="stext-111 cl8">
-								- 
+								-
 							</span>
 						</div>
 					</div>
