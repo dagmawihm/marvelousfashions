@@ -377,7 +377,7 @@ if (isset($_SESSION['id'])) {
 							<?php
 							if ($availability == "outofstock") {
 							?>
-								<div class="block2-pic hov-img0 label-new" data-label="<?php echo $availability; ?>">
+								<div class="block2-pic hov-img0 label-new" data-label="Out of Stock">
 								<?php
 							} else {
 								?>
@@ -386,10 +386,10 @@ if (isset($_SESSION['id'])) {
 								}
 									?>
 
-
-									<img src="assets/products-img/<?php echo $images; ?>" alt="<?php echo $title; ?>">
-
-									<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1i" data-content-type="<?php echo $id; ?>">
+									<a href="product/?url=<?php echo $url; ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+										<img src="assets/products-img/<?php echo $images; ?>" alt="<?php echo $title; ?>">
+									</a>
+									<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1i" style="margin-bottom: 5em;" data-content-type="<?php echo $id; ?>">
 										Quick View
 									</a>
 									</div>
@@ -399,7 +399,7 @@ if (isset($_SESSION['id'])) {
 												<?php echo $title; ?>
 											</a>
 											<span class="stext-105 cl3">
-												$<?php echo $price; ?>
+												<?php echo $price; ?> Birr
 											</span>
 										</div>
 										<div class="block2-txt-child2 flex-r p-t-3" id="wishcont<?php echo $id; ?>">

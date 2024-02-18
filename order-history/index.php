@@ -63,8 +63,9 @@ if (isset($_SESSION['id'])) {
                                     <?php
                                     $sqlselectitems = "SELECT * FROM ordered_items WHERE oid = '$oid'";
                                     $resultselectitems = mysqli_query($db, $sqlselectitems);
-                                    $numofrows = mysqli_num_rows($resultselectitems);
-                                    if (!$numofrows == 0) {
+                                    $numofrowsq = mysqli_num_rows($resultselectitems);
+                                    if (!$numofrowsq == 0) {
+                                        $totalprice = 0;
                                         while ($row = mysqli_fetch_array($resultselectitems)) {
                                             $pid = $row["pid"];
                                             $ps = $row["ps"];
@@ -74,6 +75,7 @@ if (isset($_SESSION['id'])) {
                                             while ($row = mysqli_fetch_array($resultdisplayproduct)) {
                                                 $title = $row["title"];
                                                 $price = $row["price"];
+                                                $totalprice = $totalprice + $price;
                                                 $images = $row["images"];
                                                 $pos = strpos($images, "||");
                                                 $images = substr($images, 0, $pos);
@@ -96,7 +98,7 @@ if (isset($_SESSION['id'])) {
                                                     </div>
                                                 </td>
                                                 <td class="column-2"><a href="../product/?url=<?php echo ($url); ?>"><?php echo ($title); ?> (<?php echo ($ps); ?>)</a></td>
-                                                <td class="column-3">$<?php echo ($price); ?></td>
+                                                <td class="column-3"><?php echo ($price); ?> Birr</td>
 
                                                 <?php
                                                 if ($availability == "outofstock") {
@@ -145,12 +147,9 @@ if (isset($_SESSION['id'])) {
                                 } else {
                                     ?>
                                     <tr class="table_head">
-                                        <th class="column-1">Order Id</th>
-                                        <th class="column-1">Name</th>
-                                        <th class="column-1">Address</th>
-                                        <th class="column-4">Date</th>
-                                        <th class="column-5">Total</th>
-                                        <th class="column-4" style="text-align: center;">Number of Items</th>
+                                        <th class="column-5">Order Id</th>
+                                        <th class="column-1">Total</th>
+                                        <th class="column-1">Number of Items</th>
                                     </tr>
 
                                     <?php
@@ -189,10 +188,7 @@ if (isset($_SESSION['id'])) {
 
                                                 <tr class="table_row" id="<?php echo ($id); ?>">
                                                     <td class="column-1"><a href="?orderid=<?php echo ($id); ?>"><?php echo ($id); ?></a></td>
-                                                    <td class="column-1"><?php echo ($name); ?></td>
-                                                    <td class="column-1"><?php echo ($address); ?></td>
-                                                    <td class="column-4"><?php echo ($date); ?></td>
-                                                    <td class="column-5">$<?php echo ($total); ?></td>
+                                                    <td class="column-1"><?php echo ($total); ?> Birr</td>
                                                     <td class="column-1"><?php echo ($numofrowsitem); ?></td>
 
                                                     <?php
@@ -252,12 +248,9 @@ if (isset($_SESSION['id'])) {
                                                 ?>
 
                                                     <tr class="table_row">
-                                                        <td class="column-1"><a href="?orderid=<?php echo ($dataArray[$a]); ?>"><?php echo ($dataArray[$a]); ?></a></td>
-                                                        <td class="column-1"><?php echo ($name); ?></td>
-                                                        <td class="column-1"><?php echo ($address); ?></td>
-                                                        <td class="column-4"><?php echo ($date); ?></td>
-                                                        <td class="column-5">$<?php echo ($total); ?></td>
-                                                        <td class="column-1"><?php echo ($numofrowsitem); ?></td>
+                                                        <td class="column-5"><a href="?orderid=<?php echo ($dataArray[$a]); ?>"><?php echo substr(($dataArray[$a]), -5); ?></a></td>
+                                                        <td class="column-1"><a href="?orderid=<?php echo ($dataArray[$a]); ?>"><?php echo ($total); ?> Birr</a></td>
+                                                        <td class="column-1"><a href="?orderid=<?php echo ($dataArray[$a]); ?>"><?php echo ($numofrowsitem); ?></a></td>
 
                                                     </tr>
 
@@ -288,6 +281,104 @@ if (isset($_SESSION['id'])) {
                     </div>
 
                 </div>
+
+                <?php
+                if (isset($_GET["orderid"])) {
+                    
+                    $sqldisplayorderdit = "SELECT * FROM orders WHERE id = '$oid'";
+                    $resultdisplayorderdit = mysqli_query($db, $sqldisplayorderdit);
+                    $numofrows = mysqli_num_rows($resultdisplayorderdit);
+                    if (!$numofrows == 0) {
+                        while ($row = mysqli_fetch_array($resultdisplayorderdit)) {
+                            $name = $row["name"];
+                            $address = $row["address"];
+                            $date = $row["date"];
+                            $phone = $row["phone"];
+                            $remark = $row["remark"];
+                        }
+                    }
+                ?>
+
+                    <div class="col-sm-10 col-lg-7 col-xl-5 m-lr-auto m-b-50 uniqueid" id="<?php echo ($uniqueid); ?>">
+                        <div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm">
+                            <h3 class="mtext-109 cl2 p-b-30">
+                            Order Details
+                            </h3>
+
+                            <div class="flex-w flex-t p-b-13">
+                                <div class="size-208">
+                                    <span class="stext-110 cl2">
+                                        Subtotal:
+                                    </span>
+                                </div>
+                                <div class="size-209">
+                                    <span class="mtext-110 cl2" id="subtotal">
+                                        <?php echo ($totalprice);?> Birr
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="flex-w flex-t bor12 p-b-13">
+                                <div class="size-208">
+                                    <span class="stext-110 cl2">
+
+                                    </span>
+                                </div>
+                                <div class="size-209">
+                                    <span class="mtext-110 cl2" id="subtotal">
+                                        (<?php echo ($numofrowsq); ?> Item)
+                                    </span>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="flex-w flex-t bor12 p-t-15 p-b-30">
+                                <div class="size-208 w-full-ssm">
+                                    <span class="stext-110 cl2">
+                                        Shipping:
+                                    </span>
+                                </div>
+                                <div class="size-209 p-r-18 p-r-0-sm w-full-ssm">
+                                    <div class="p-t-15">
+
+                                        <div class="bor8 bg0 m-b-22">
+                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="name" id="name" placeholder="<?php echo ($name);?>" disabled>
+                                        </div>
+                                        <div class="bor8 bg0 m-b-12">
+                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="address" id="address" placeholder="<?php echo ($address);?>" disabled>
+                                        </div>
+                                        <div class="bor8 bg0 m-b-22">
+                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="phone" id="phone" placeholder="<?php echo ($date);?>" disabled>
+                                        </div>
+                                        <div class="bor8 m-b-30">
+                                            <textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" name="msg" id="msg" disabled><?php echo ($remark);?></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-w flex-t p-t-27 p-b-33">
+                                <div class="size-208">
+                                    <span class="mtext-101 cl2">
+                                        Total:
+                                    </span>
+                                </div>
+                                <div class="size-209 p-t-1">
+                                    <span class="mtext-110 cl2" id="total">
+                                        <?php echo ($totalprice);?> Birr
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="m-b-30" id="response">
+                            </div>
+                        </div>
+                    </div>
+
+                <?php
+                }
+                ?>
+
 
             </div>
         </div>

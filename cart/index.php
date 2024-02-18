@@ -114,7 +114,7 @@ if (isset($_SESSION['id'])) {
 													</div>
 												</td>
 												<td class="column-2"><a href="../product/?url=<?php echo $url; ?>"><?php echo $title; ?> (<?php echo $reversedArray[$a]; ?>)</a></td>
-												<td class="column-3">$ <?php
+												<td class="column-3"><?php
 																		if ($availability == "outofstock") {
 																			$totalcp = $totalcp - $price;
 																			$price = 0;
@@ -122,7 +122,7 @@ if (isset($_SESSION['id'])) {
 																			echo $price;
 																		}
 
-																		?></td>
+																		?> Birr</td>
 
 
 												<?php
@@ -198,9 +198,8 @@ if (isset($_SESSION['id'])) {
 									</span>
 								</div>
 								<div class="size-209">
-									$
 									<span class="mtext-110 cl2" id="subtotal">
-										<?php echo ($totalcp); ?>
+										<?php echo ($totalcp); ?> Birr
 									</span>
 								</div>
 							</div>
@@ -252,9 +251,8 @@ if (isset($_SESSION['id'])) {
 									</span>
 								</div>
 								<div class="size-209 p-t-1">
-									$
 									<span class="mtext-110 cl2" id="total">
-										<?php echo ($totalcp); ?>
+										<?php echo ($totalcp); ?> Birr
 									</span>
 
 									<span class="mtext-110 cl2" style="display: none;" id="itemlist"><?php

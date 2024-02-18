@@ -75,7 +75,7 @@ while ($row = mysqli_fetch_assoc($resultdisplayproducts)) {
                                     <?php echo $title; ?>
                                     </a>
                                     <span class="stext-105 cl3">
-                                        $<?php echo $price; ?>
+                                        <?php echo $price; ?> Birr
                                     </span>
                         </div>
                         <div class="block2-txt-child2 flex-r p-t-3" id="wishcont<?php echo $id; ?>">

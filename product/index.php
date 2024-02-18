@@ -159,7 +159,7 @@ function separator($data)
 							<?php echo $title; ?>
 						</h1>
 						<span class="mtext-106 cl2">
-							$<?php echo $price; ?>
+							<?php echo $price; ?> Birr
 						</span>
 
 						<p class="mtext-15 cl2 js-name-detail p-t-14">

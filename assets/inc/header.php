@@ -597,7 +597,7 @@ if (isset($index) && $index == "true") {
                                                 <?php echo ($titleh); ?>
                                                 </a>
                                                 <span class="header-cart-item-info">
-                                                    $<?php echo ($priceh); ?>
+                                                    <?php echo ($priceh); ?> Birr
                                                 </span>
 
 
