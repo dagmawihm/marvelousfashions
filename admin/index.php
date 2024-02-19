@@ -291,7 +291,7 @@ if (!isset($_SESSION['id'])) {
 			$forerr == "<p>For*</p>"
 		) {
 
-			$sqlpost = "INSERT INTO Products (url, title, price, short_description, long_description, materials, color, size, product_code, categorie, quantity, tags, images, forr, availability) VALUE ('$url','$title','$price','$short_description','$long_description','$materials','$color','$size','$product_code','$categorie','$quantity','$tags','$images','$for','$availability')";
+			$sqlpost = "INSERT INTO products (url, title, price, short_description, long_description, materials, color, size, product_code, categorie, quantity, tags, images, forr, availability) VALUE ('$url','$title','$price','$short_description','$long_description','$materials','$color','$size','$product_code','$categorie','$quantity','$tags','$images','$for','$availability')";
 			$upload_p = "t";
 
 
