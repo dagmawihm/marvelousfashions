@@ -68,33 +68,23 @@ if (isset($index) && $index == "true") {
     ?>
 
     <div class="container-menu-desktop">
-        <?php
-        if (1 > 2) {
-        ?>
-            <!-- <div class="top-bar">
+
+        <div class="top-bar">
             <div class="content-topbar flex-sb-m h-full container">
                 <div class="left-top-bar">
-                    Free shipping for standard order over $100
+                    Language Preference
                 </div>
                 <div class="right-top-bar flex-w h-full">
-                    <a href="#" class="flex-c-m trans-04 p-lr-25">
-                        Help & FAQs
-                    </a>
-                    <a href="#" class="flex-c-m trans-04 p-lr-25">
-                        My Account
-                    </a>
-                    <a href="#" class="flex-c-m trans-04 p-lr-25">
-                        EN
-                    </a>
-                    <a href="#" class="flex-c-m trans-04 p-lr-25">
-                        USD
-                    </a>
+                    <button id="translateToEng" style="color: #b2b2b2" class="flex-c-m trans-04 p-lr-25">
+                        ENGLISH
+                    </button>
+                    <button id="translateToAmh" style="color: #b2b2b2" class="flex-c-m trans-04 p-lr-25">
+                        አማርኛ
+                    </button>
                 </div>
             </div>
-        </div> -->
-        <?php
-        }
-        ?>
+        </div>
+
 
 
 
@@ -132,10 +122,10 @@ if (isset($index) && $index == "true") {
                             } ?>
 
                             <li>
-                                <a href="about/">About</a>
+                                <a href="about/">About Us</a>
                             </li>
                             <li>
-                                <a href="contact/">Contact</a>
+                                <a href="contact/">Contact Us</a>
                             </li>
 
                             <?php
@@ -149,7 +139,7 @@ if (isset($index) && $index == "true") {
                                         <li><a href="messages/">Messages</a></li>
                                         <li>
                                             <form method="post" action="">
-                                                <a href="admin/"><input type="submit" name="logout_btn" value="Logout" style="background-color: transparent;"></a>
+                                                <a><input type="submit" name="logout_btn" value="Logout" style="background-color: transparent;"></a>
                                             </form>
                                         </li>
                                     </ul>
@@ -218,7 +208,7 @@ if (isset($index) && $index == "true") {
                                         echo '<li>';
                                     }
                                     ?>
-                                    <a href="../about/">About</a>
+                                    <a href="../about/">About Us</a>
                                     </li>
                                     <?php
                                     if (isset($contact) && $contact == "true") {
@@ -227,7 +217,7 @@ if (isset($index) && $index == "true") {
                                         echo '<li>';
                                     }
                                     ?>
-                                    <a href="../contact/">Contact</a>
+                                    <a href="../contact/">Contact Us</a>
                                     </li>
 
                                     <?php
@@ -241,7 +231,7 @@ if (isset($index) && $index == "true") {
                                                 <li><a href="../messages/">Messages</a></li>
                                                 <li>
                                                     <form method="post" action="">
-                                                        <a href="admin/"><input type="submit" name="logout_btn" value="Logout" style="background-color: transparent;"></a>
+                                                        <a><input type="submit" name="logout_btn" value="Logout" style="background-color: transparent;"></a>
                                                     </form>
                                                 </li>
                                             </ul>
@@ -343,35 +333,27 @@ if (isset($index) && $index == "true") {
             </div>
 
             <div class="menu-mobile">
-                <?php
-                if (1 > 2) {
-                ?>
-                    <!-- <ul class="topbar-mobile">
-                        <li>
-                            <div class="left-top-bar">
-                                Free shipping for standard order over $100
-                            </div>
-                        </li>
-                        <li>
-                            <div class="right-top-bar flex-w h-full">
-                                <a href="#" class="flex-c-m p-lr-10 trans-04">
-                                    Help & FAQs
-                                </a>
-                                <a href="#" class="flex-c-m p-lr-10 trans-04">
-                                    My Account
-                                </a>
-                                <a href="#" class="flex-c-m p-lr-10 trans-04">
-                                    EN
-                                </a>
-                                <a href="#" class="flex-c-m p-lr-10 trans-04">
-                                    USD
-                                </a>
-                            </div>
-                        </li>
-                    </ul> -->
+
+                <ul class="topbar-mobile">
+                    <li>
+                        <div class="left-top-bar">
+                            Language Preference
+                        </div>
+                    </li>
+                    <li>
+                        <div class="right-top-bar flex-w h-full">
+                            <button id="translateToEngm" style="color: #b2b2b2" class="flex-c-m trans-04 p-lr-25">
+                                ENGLISH
+                            </button>
+                            <button id="translateToAmhm" style="color: #b2b2b2" class="flex-c-m trans-04 p-lr-25">
+                                አማርኛ
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+
 
                 <?php
-                }
                 if (isset($index) && $index == "true") {
                 ?>
                     <ul class="main-menu-m">
@@ -396,10 +378,10 @@ if (isset($index) && $index == "true") {
                             <a href="blog/">Blog</a>
                         </li>
                         <li>
-                            <a href="about/">About</a>
+                            <a href="about/">About Us</a>
                         </li>
                         <li>
-                            <a href="contact/">Contact</a>
+                            <a href="contact/">Contact Us</a>
                         </li>
 
                         <?php
@@ -413,7 +395,7 @@ if (isset($index) && $index == "true") {
                                     <li><a href="messages/">Messages</a></li>
                                     <li>
                                         <form method="post" action="">
-                                            <a href="admin/"><input type="submit" name="logout_btn" value="Logout" style="background-color: transparent;"></a>
+                                            <a><input type="submit" name="logout_btn" value="Logout" style="background-color: transparent;"></a>
                                         </form>
                                     </li>
                                 </ul>
@@ -452,10 +434,10 @@ if (isset($index) && $index == "true") {
                             <a href="../blog/">Blog</a>
                         </li>
                         <li>
-                            <a href="../about/">About</a>
+                            <a href="../about/">About Us</a>
                         </li>
                         <li>
-                            <a href="../contact/">Contact</a>
+                            <a href="../contact/">Contact Us</a>
                         </li>
 
                         <?php
@@ -469,7 +451,7 @@ if (isset($index) && $index == "true") {
                                     <li><a href="../messages/">Messages</a></li>
                                     <li>
                                         <form method="post" action="">
-                                            <a href="admin/"><input type="submit" name="logout_btn" value="Logout" style="background-color: transparent;"></a>
+                                            <a><input type="submit" name="logout_btn" value="Logout" style="background-color: transparent;"></a>
                                         </form>
                                     </li>
                                 </ul>
@@ -518,7 +500,7 @@ if (isset($index) && $index == "true") {
             </header>
 
             <div class="icon-bar">
-                <a href="https://t.me/Marvelousfashion" target="_blank" class="stickytg" title="Contact us on Telegram">
+                <a href="https://t.me/Marvelousfashions" target="_blank" class="stickytg" title="Join our Telegram Channel">
                     <i id="stgicon" class="fa-brands fa-telegram fa-4x"></i>
                 </a>
             </div>

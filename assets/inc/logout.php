@@ -13,6 +13,6 @@ function logout(){
     }
     
     // Redirect to the login page after logout
-    header("Location: ../login");
+    header("Location: https://marvelousfashions.com/login/");
     exit();
 }

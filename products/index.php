@@ -170,17 +170,20 @@ if (isset($_SESSION['id'])) {
 					<a href="" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $alltab; ?>">
 						All Products
 					</a>
-					<a href="?forr=women" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $womentab; ?>">
-						Women
-					</a>
-					<a href="?forr=men" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $mentab; ?>">
-						Men
-					</a>
-					<a href="?forr=kids" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $kidstab; ?>">
-						Kids
+					<a href="?cat=maternity" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $mentab; ?>">
+						Maternity
 					</a>
 					<a href="?cat=shirt" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $shirttab; ?>">
 						Shirt
+					</a>
+					<a href="?cat=dresses" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $kidstab; ?>">
+						Dresses
+					</a>
+					<a href="?cat=tops" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $shoestab; ?>">
+						Tops
+					</a>
+					<a href="?cat=bottoms" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $shoestab; ?>">
+						Bottoms
 					</a>
 					<a href="?cat=shoes" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $shoestab; ?>">
 						Shoes
@@ -277,6 +280,7 @@ if (isset($_SESSION['id'])) {
 								</li>
 							</ul>
 						</div>
+
 						<div class="filter-col3 p-r-15 p-b-27">
 							<div class="mtext-102 cl2 p-b-15">
 								Color
@@ -550,7 +554,7 @@ if (isset($_SESSION['id'])) {
 									<?php
 								}
 									?>
-									<a href="product/?url=<?php echo $url; ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									<a href="../product/?url=<?php echo $url; ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 										<img src="../assets/products-img/<?php echo $images; ?>" alt="<?php echo $title; ?>">
 									</a>
 									<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1" style="margin-bottom: 5em;" data-content-type="<?php echo $id; ?>">

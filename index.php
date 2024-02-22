@@ -25,7 +25,7 @@ if (isset($_SESSION['id'])) {
 	<section class="section-slide">
 		<div class="wrap-slick1">
 			<div class="slick1">
-				<div class="item-slick1" style="background-image:url(assets/images/xslide-02.webp)">
+				<div class="item-slick1" style="background-image:url(assets/images/xslide-01.webp)">
 					<div class="container h-full">
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
 							<div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
@@ -36,7 +36,7 @@ if (isset($_SESSION['id'])) {
 						</div>
 					</div>
 				</div>
-				<div class="item-slick1" style="background-image:url(assets/images/xslide-01.webp)">
+				<div class="item-slick1" style="background-image:url(assets/images/xslide-02.webp)">
 					<div class="container h-full">
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
 							<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
@@ -46,11 +46,11 @@ if (isset($_SESSION['id'])) {
 							</div>
 							<div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
 								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-									NEW SEASON
+									Maternity Clothing
 								</h2>
 							</div>
 							<div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
-								<a href="products/?forr=women" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+								<a href="products/?cat=maternity" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
 									Shop Now
 								</a>
 							</div>
@@ -164,19 +164,22 @@ if (isset($_SESSION['id'])) {
 					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1">
 						All Products
 					</button>
-					<a href="products/?forr=women" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5">
-						Women
+					<a href="products/?cat=maternity" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $mentab; ?>">
+						Maternity
 					</a>
-					<a href="products/?forr=men" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5">
-						Men
-					</a>
-					<a href="products/?forr=kids" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5">
-						Kids
-					</a>
-					<a href="products/?cat=shirt" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5">
+					<a href="products/?cat=shirt" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $shirttab; ?>">
 						Shirt
 					</a>
-					<a href="products/?cat=shoes" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5">
+					<a href="products/?cat=dresses" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $kidstab; ?>">
+						Dresses
+					</a>
+					<a href="products/?cat=tops" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $shoestab; ?>">
+						Tops
+					</a>
+					<a href="products/?cat=bottoms" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $shoestab; ?>">
+						Bottoms
+					</a>
+					<a href="products/?cat=shoes" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $shoestab; ?>">
 						Shoes
 					</a>
 				</div>

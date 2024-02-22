@@ -68,8 +68,8 @@
                     GET IN TOUCH
                 </h4>
                 <p class="stext-107 cl7 size-201">
-                    Any questions? Let us know in store at Megenagna 3M Building (100m down from Zefmesh) first floor No. FR-05, make sure it is MARVELOUS FASHION. or call us
-                    on <br> <a href="tel:+251949075847">(+251) 949075847</a> or <a href="tel:+251980631614">(+251) 980-631-614</a>
+                    <span>Any questions? </span> Let us know in store at Megenagna 3M Building (100m down from Zefmesh) first floor No. FR-05, make sure it is MARVELOUS FASHION. or call us
+                    on <br> <a href="tel:+251949075847">(+251)949075847 </a> or <a href="tel:+251980631614"> (+251)980631614</a>
                 </p>
             </div>
 
@@ -82,23 +82,23 @@
                 <ul>
                     <li class="p-b-10">
                         <a href="https://t.me/Marvelousfashions" target="_blank" class="stext-107 cl7 hov-cl1 trans-04">
-                        <i class="fa-brands fa-telegram fa-lg"></i> Telegram
+                            <i class="fa-brands fa-telegram fa-lg"></i> Telegram
                         </a>
                     </li>
                     <li class="p-b-10">
                         <a href="https://www.tiktok.com/@marvelousfashions" target="_blank" class="stext-107 cl7 hov-cl1 trans-04">
-                        <i class="fa-brands fa-tiktok fa-lg"></i> Tiktok
+                            <i class="fa-brands fa-tiktok fa-lg"></i> Tiktok
                         </a>
 
                     </li>
                     <li class="p-b-10">
                         <a href="https://www.instagram.com/marvelous_fashionss/" target="_blank" class="stext-107 cl7 hov-cl1 trans-04">
-                        <i class="fa-brands fa-instagram fa-lg"></i> Instagram
+                            <i class="fa-brands fa-instagram fa-lg"></i> Instagram
                         </a>
                     </li>
                     <li class="p-b-10">
                         <a href="https://www.facebook.com/profile.php?id=100085035107783" target="_blank" class="stext-107 cl7 hov-cl1 trans-04">
-                        <i class="fa-brands fa-facebook fa-lg"></i> Facebook
+                            <i class="fa-brands fa-facebook fa-lg"></i> Facebook
                         </a>
                     </li>
                 </ul>
@@ -110,7 +110,7 @@
                     Download Our App
                 </h4>
                 <p class="stext-107 cl7">
-                    Stay connected with us on the go. Download our mobile app for exclusive offers and updates.
+                    <span>Stay connected with us on the go.</span> Download our mobile app for exclusive offers and updates.
                 </p>
                 <div class="p-t-18">
                     <a href="https://marvelousfashions.com/app/marvelousfashions.apk" class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
@@ -126,7 +126,7 @@
 
         <div class="p-t-40">
             <p class="stext-107 cl6 txt-center">
-                Copyright &copy;2024 All rights reserved | Developed by <a href="https://www.linkedin.com/in/dagmawihm/" target="_blank">Dagmawihm</a>
+                Copyright &copy;2024 All rights reserved <span>|</span> Developed by <a href="https://www.linkedin.com/in/dagmawihm/" target="_blank">Dagmawi Asres</a>
             </p>
         </div>
 
@@ -174,3 +174,112 @@ if (isset($index) && $index == "true") {
 <?php
 }
 ?>
+
+<script>
+    // Function to set the language cookie
+    function setLanguageCookie(language) {
+        document.cookie = "language=" + language + "; path=/";
+    }
+
+    // Select all text nodes on the page, excluding those inside script elements
+    function getAllTextNodes() {
+        const walker = document.createTreeWalker(
+            document.body,
+            NodeFilter.SHOW_TEXT, {
+                acceptNode: function(node) {
+                    // Skip text nodes inside script elements and <hide> elements
+                    const parentTagName = node.parentNode.tagName.toLowerCase();
+                    if (parentTagName === 'script' || parentTagName === 'hide') {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            },
+            false
+        );
+
+        const textNodes = [];
+        while (walker.nextNode()) {
+            textNodes.push(walker.currentNode);
+        }
+        return textNodes;
+    }
+
+
+    // Check if a string contains Amharic characters
+    function containsAmharic(text) {
+        // Amharic characters range from \u1200 to \u137F
+        const amharicRegex = /[\u1200-\u137F]/;
+        return amharicRegex.test(text);
+    }
+
+    // Translate all text nodes to Amharic
+    function translateAllTextToAmharic() {
+        const textNodes = getAllTextNodes();
+
+        const apiUrl = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=am&dt=t&q=";
+
+        textNodes.forEach(function(node) {
+            const textToTranslate = node.nodeValue.trim();
+            if (textToTranslate !== "" && !containsAmharic(textToTranslate)) {
+                fetch(apiUrl + encodeURI(textToTranslate))
+                    .then(response => response.json())
+                    .then(data => {
+                        // Update the text content of the text node with the translated text
+                        node.nodeValue = data[0][0][0];
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+        });
+    }
+
+    // Check if the user preference cookie is set to "amharic"
+    function checkLanguagePreference() {
+        return document.cookie.includes("language=amharic");
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // If the language preference is set to "amharic", translate the page content
+        if (checkLanguagePreference()) {
+            translateAllTextToAmharic();
+        }
+
+        document.getElementById("translateToAmh").addEventListener("click", function() {
+            // Set the language preference cookie to "amharic" when the Translate button is clicked
+            setLanguageCookie("amharic");
+            translateAllTextToAmharic();
+        });
+        document.getElementById("translateToAmhm").addEventListener("click", function() {
+            // Set the language preference cookie to "amharic" when the Translate button is clicked
+            setLanguageCookie("amharic");
+            translateAllTextToAmharic();
+        });
+
+        document.getElementById("translateToEng").addEventListener("click", function() {
+            // Set the language preference cookie to "amharic" when the Translate button is clicked
+            if (checkLanguagePreference()) {
+                // Update the existing language cookie to "english"
+                setLanguageCookie("english");
+                // Refresh the page
+                location.reload();
+            } else {
+                // Set the language preference cookie to "english" if it doesn't exist
+                setLanguageCookie("english");
+            }
+
+        });
+        document.getElementById("translateToEngm").addEventListener("click", function() {
+            // Set the language preference cookie to "amharic" when the Translate button is clicked
+            if (checkLanguagePreference()) {
+                // Update the existing language cookie to "english"
+                setLanguageCookie("english");
+                // Refresh the page
+                location.reload();
+            } else {
+                // Set the language preference cookie to "english" if it doesn't exist
+                setLanguageCookie("english");
+            }
+
+        });
+    });
+</script>

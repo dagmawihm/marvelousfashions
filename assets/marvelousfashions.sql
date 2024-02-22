@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 10, 2024 at 07:02 PM
+-- Generation Time: Feb 23, 2024 at 12:06 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `email`, `password`, `remember_token`, `token_expiration`) VALUES
-(1, 'nevacomputers@gmail.com', '$2y$10$GshNKu3NPNoYWKkp4IGSOuc8.RzwsGvHU0SMt9Y.uQyddSzzw5HrW', '3e7993144824ecfaef9a24279c4758be7f9214aea213309ebd92d36d4aeecce3', '2025-02-05 17:38:53');
+(1, 'nevacomputers@gmail.com', '$2y$10$GshNKu3NPNoYWKkp4IGSOuc8.RzwsGvHU0SMt9Y.uQyddSzzw5HrW', 'bea863e15c69947d6ba3ce50c45ea9b99b2dcd2b044a57eaaa8e33dc422d2691', '2025-02-21 23:02:51');
 
 -- --------------------------------------------------------
 
@@ -50,22 +50,37 @@ INSERT INTO `admin` (`id`, `email`, `password`, `remember_token`, `token_expirat
 
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
-  `categorie` text NOT NULL,
-  `tag` text NOT NULL,
-  `date` datetime NOT NULL DEFAULT current_timestamp()
+  `categorie` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`id`, `categorie`, `tag`, `date`) VALUES
-(1, 'Bag', '1110', '0000-00-00 00:00:00'),
-(2, 'Shoes', '0', '0000-00-00 00:00:00'),
-(3, 'Jacket', '0', '0000-00-00 00:00:00'),
-(4, 'Shirt', '0', '0000-00-00 00:00:00'),
-(5, 'Pants', '0', '0000-00-00 00:00:00'),
-(6, 'Dress', '0', '0000-00-00 00:00:00');
+INSERT INTO `categories` (`id`, `categorie`) VALUES
+(1, 'dresses'),
+(2, 'tops'),
+(3, 't-shirts'),
+(4, 'blouses'),
+(5, 'bottoms'),
+(6, 'knitwear'),
+(7, 'co-ords'),
+(8, 'sweatshirts'),
+(9, 'coatsandjackets'),
+(10, 'denim'),
+(11, 'arabianwear'),
+(12, 'pants'),
+(13, 'wedding'),
+(14, 'sportandoutdoors'),
+(15, 'underwearandsleepwear'),
+(16, 'suits'),
+(17, 'partywear'),
+(18, 'maternity'),
+(19, 'sweaters'),
+(20, 'shoes'),
+(21, 'jewelryandaccs'),
+(22, 'bags'),
+(23, 'accessories');
 
 -- --------------------------------------------------------
 
@@ -77,17 +92,14 @@ CREATE TABLE `feedbacks` (
   `id` int(11) NOT NULL,
   `email` varchar(254) NOT NULL,
   `msg` text NOT NULL,
-   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `date` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-
 
 --
 -- Dumping data for table `feedbacks`
 --
 
 INSERT INTO `feedbacks` (`id`, `email`, `msg`, `date`) VALUES
-(8, 'akerayu0@gmail.com', 'sadsasa', '2024-02-01'),
 (9, 'dagmawihm@gmail.com', 'aaaaaaaa', '2024-02-01');
 
 -- --------------------------------------------------------
@@ -103,13 +115,6 @@ CREATE TABLE `ordered_items` (
   `oid` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `ordered_items`
---
-
-INSERT INTO `ordered_items` (`id`, `pid`, `ps`, `oid`) VALUES
-(415, 164, 'L', 6183731813822340);
-
 -- --------------------------------------------------------
 
 --
@@ -122,7 +127,7 @@ CREATE TABLE `orders` (
   `address` varchar(256) NOT NULL,
   `phone` varchar(256) NOT NULL,
   `remark` text NOT NULL,
-   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `date` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -130,7 +135,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `name`, `address`, `phone`, `remark`, `date`) VALUES
-(6183731813822340, 'Dagmawi Asres', '22 Dawn View Ct', '3017604415', '', '2024-02-06');
+(22203011315382744, 'Dagmawi Asres', '1037 Sterling Rd', '2409457383', '', '2024-02-22');
 
 -- --------------------------------------------------------
 
@@ -165,25 +170,23 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`url`, `title`, `price`, `short_description`, `long_description`, `materials`, `color`, `size`, `product_code`, `categorie`, `quantity`, `tags`, `images`, `id`, `date`, `forr`, `availability`, `view`, `remark`) VALUES
-('shirt-red-and-black-long-sleeve-womens-shirt', 'Red and Black Long sleeve womens shirt', 1300, '👚Size L\n💵Price 1300birr\n📨 Dm  @Marvelousfashion\n☎️  0949075847 / 0980631614', '👚Size L\r\n💵Price 1300birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Red and Black', 'L||', 'SHI-110502', 'Shirt', 1, '#Red_and_Black_Long_sleeve_womens_shirt\n#womens_shirt\n#Long_sleeve_womens_shirt\n#Long_sleeve_women_shirt\n#Long_sleeve_shirt', 'shirt-red-and-black-long-sleeve-womens-shirt0.webp||', 140, '2022-11-05 12:59:20', 'Women', 'instock', 0, ''),
-('shirt-red-long-sleeve-womens-shirt', 'Red Long sleeve womens shirt', 1500, '👚Size L\r\n💵Price 1500birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size L\r\n💵Price 1500birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Red', 'L||', 'SHI-110503', 'Shirt', 1, '#Red_and_Black_Long_sleeve_womens_shirt\r\n#womens_shirt\r\n#Long_sleeve_womens_shirt\r\n#Long_sleeve_women_shirt\r\n#Long_sleeve_shirt', 'shirt-red-long-sleeve-womens-shirt0.webp||', 141, '2022-11-05 13:11:15', 'Women', 'instock', 0, ''),
-('shirt-black-and-yellow-long-sleeve-womens-shirt', 'Black and Yellow Long sleeve womens shirt', 1400, '👚Size 3XL\r\n💵Price 1400birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size 3XL\r\n💵Price 1400birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Black and Yellow', '3XL||', 'SHI-110501', 'Shirt', 1, '#Red_and_Black_Long_sleeve_womens_shirt\r\n#womens_shirt\r\n#Long_sleeve_womens_shirt\r\n#Long_sleeve_women_shirt\r\n#Long_sleeve_shirt', 'shirt-black-and-yellow-long-sleeve-womens-shirt0.webp||', 142, '2022-11-05 13:19:40', 'Women', 'instock', 0, ''),
-('pants-jeans-for-women', 'Jeans for Women', 1000, '👚Size M\n💵Price 1000 birr\n📨 Dm  @Marvelousfashion\n☎️  0949075847 / 0980631614', '👚Size M\r\n💵Price 1000 birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '98% cotton/2% spandex', 'Blue', 'M||', 'PAN-111103', 'Pants', 1, '#Jeans for Women\r\n#Jeans\r\n#Women', 'pants-jeans-for-women0.webp||pants-jeans-for-women1.webp||pants-jeans-for-women2.webp||', 145, '2022-11-11 12:05:57', 'Women', 'instock', 44, ''),
+('shirt-red-and-black-long-sleeve-womens-shirt', 'Red and Black Long sleeve womens shirt', 1300, '👚Size L\n💵Price 1300birr\n📨 Dm  @Marvelousfashion\n☎️  0949075847 / 0980631614', '👚Size L\r\n💵Price 1300birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Red and Black', 'L||', 'SHI-110502', 'Shirt', 1, '#Red_and_Black_Long_sleeve_womens_shirt\n#womens_shirt\n#Long_sleeve_womens_shirt\n#Long_sleeve_women_shirt\n#Long_sleeve_shirt', 'shirt-red-and-black-long-sleeve-womens-shirt0.webp||', 140, '2022-11-05 12:59:20', 'Women', 'instock', 1, ''),
+('shirt-red-long-sleeve-womens-shirt', 'Red Long sleeve womens shirt', 1500, '👚Size L\r\n💵Price 1500birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size L\r\n💵Price 1500birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Red', 'L||', 'SHI-110503', 'maternity', 1, '#Red_and_Black_Long_sleeve_womens_shirt\r\n#womens_shirt\r\n#Long_sleeve_womens_shirt\r\n#Long_sleeve_women_shirt\r\n#Long_sleeve_shirt', 'shirt-red-long-sleeve-womens-shirt0.webp||', 141, '2024-02-22 17:52:21', 'Women', 'instock', 0, ''),
+('shirt-black-and-yellow-long-sleeve-womens-shirt', 'Black and Yellow Long sleeve womens shirt', 1400, '👚Size 3XL\r\n💵Price 1400birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size 3XL\r\n💵Price 1400birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Black and Yellow', '3XL||', 'SHI-110501', 'Shirt', 1, '#Red_and_Black_Long_sleeve_womens_shirt\r\n#womens_shirt\r\n#Long_sleeve_womens_shirt\r\n#Long_sleeve_women_shirt\r\n#Long_sleeve_shirt', 'shirt-black-and-yellow-long-sleeve-womens-shirt0.webp||', 142, '2022-11-05 13:19:40', 'Women', 'instock', 4, ''),
+('pants-jeans-for-women', 'Jeans for Women', 1000, '👚Size M\n💵Price 1000 birr\n📨 Dm  @Marvelousfashion\n☎️  0949075847 / 0980631614', '👚Size M\r\n💵Price 1000 birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '98% cotton/2% spandex', 'Blue', 'M||', 'PAN-111103', 'Pants', 1, '#Jeans for Women\r\n#Jeans\r\n#Women', 'pants-jeans-for-women0.webp||pants-jeans-for-women1.webp||pants-jeans-for-women2.webp||', 145, '2022-11-11 12:05:57', 'Women', 'instock', 48, ''),
 ('shirt-red-and-black-long-sleeve-womens-shirt', 'Red and Black Long sleeve womens shirt', 1300, '👚Size L\r\n💵Price 1300birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size L\r\n💵Price 1300birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Red and Black', 'L||', 'SHI-110502', 'Shirt', 1, '#Red_and_Black_Long_sleeve_womens_shirt\r\n#womens_shirt\r\n#Long_sleeve_womens_shirt\r\n#Long_sleeve_women_shirt\r\n#Long_sleeve_shirt', 'shirt-red-and-black-long-sleeve-womens-shirt0.webp||', 154, '2022-11-05 12:59:20', 'Women', 'instock', 0, ''),
-('shirt-red-long-sleeve-womens-shirt', 'Red Long sleeve womens shirt', 1500, '👚Size L\r\n💵Price 1500birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size L\r\n💵Price 1500birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Red', 'L||', 'SHI-110503', 'Shirt', 1, '#Red_and_Black_Long_sleeve_womens_shirt\r\n#womens_shirt\r\n#Long_sleeve_womens_shirt\r\n#Long_sleeve_women_shirt\r\n#Long_sleeve_shirt', 'shirt-red-long-sleeve-womens-shirt0.webp||', 155, '2022-11-05 13:11:15', 'Women', 'instock', 0, ''),
+('shirt-red-long-sleeve-womens-shirt', 'Red Long sleeve womens shirt', 1500, '👚Size L\r\n💵Price 1500birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size L\r\n💵Price 1500birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Red', 'L||', 'SHI-110503', 'maternity', 1, '#Red_and_Black_Long_sleeve_womens_shirt\r\n#womens_shirt\r\n#Long_sleeve_womens_shirt\r\n#Long_sleeve_women_shirt\r\n#Long_sleeve_shirt', 'shirt-red-long-sleeve-womens-shirt0.webp||', 155, '2024-02-22 17:52:21', 'Women', 'instock', 0, ''),
 ('shirt-black-and-yellow-long-sleeve-womens-shirt', 'Black and Yellow Long sleeve womens shirt', 1400, '👚Size 3XL\r\n💵Price 1400birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size 3XL\r\n💵Price 1400birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Black and Yellow', '3XL||', 'SHI-110501', 'Shirt', 1, '#Red_and_Black_Long_sleeve_womens_shirt\r\n#womens_shirt\r\n#Long_sleeve_womens_shirt\r\n#Long_sleeve_women_shirt\r\n#Long_sleeve_shirt', 'shirt-black-and-yellow-long-sleeve-womens-shirt0.webp||', 156, '2022-11-05 13:19:40', 'Women', 'instock', 0, ''),
-('pants-jeans-for-women', 'Jeans for Women', 1000, '👚Size M\r\n💵Price 1000 birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size M\r\n💵Price 1000 birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '98% cotton/2% spandex', 'Blue', 'M||', 'PAN-111103', 'Pants', 1, '#Jeans for Women\r\n#Jeans\r\n#Women', 'pants-jeans-for-women0.webp||pants-jeans-for-women1.webp||pants-jeans-for-women2.webp||', 158, '2022-11-11 12:05:57', 'Women', 'instock', 2, ''),
-('pants-jeans-for-women-1', 'Jeans for Womend', 425, '👚Size Ld\r\n\r\n💵Price 850 birr\r\n\r\n📨 Dm  @Marvelousfashion\r\n\r\n☎️  0949075847 / 0980631614', '👚Size Ld\r\n\r\n💵Price 850 birr\r\n\r\n📨 Dm  @Marvelousfashion\r\n\r\n☎️  0949075847 / 0980631614', '82% cotton 16% polyester 2% spandexd', 'Blued', 'XS||S||L||', 'PAN-111302', 'Bag', 2, '#Jeans for Womend\r\n#Jeans\r\n#Women', 'pants-jeans-for-women-11.webp||pants-jeans-for-women-12.webp||pants-jeans-for-women-13.webp||', 159, '2022-11-13 12:07:16', 'Men', 'outofstock', 66, 'it will be available after a week'),
+('pants-jeans-for-women', 'Jeans for Women', 1000, '👚Size M\r\n💵Price 1000 birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size M\r\n💵Price 1000 birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '98% cotton/2% spandex', 'Blue', 'M||', 'PAN-111103', 'Pants', 1, '#Jeans for Women\r\n#Jeans\r\n#Women', 'pants-jeans-for-women0.webp||pants-jeans-for-women1.webp||pants-jeans-for-women2.webp||', 158, '2022-11-11 12:05:57', 'Women', 'instock', 7, ''),
 ('shirt-red-and-black-long-sleeve-womens-shirt', 'Red and Black Long sleeve womens shirt', 1300, '👚Size L\r\n💵Price 1300birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size L\r\n💵Price 1300birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Red and Black', 'L||', 'SHI-110502', 'Shirt', 1, '#Red_and_Black_Long_sleeve_womens_shirt\r\n#womens_shirt\r\n#Long_sleeve_womens_shirt\r\n#Long_sleeve_women_shirt\r\n#Long_sleeve_shirt', 'shirt-red-and-black-long-sleeve-womens-shirt0.webp||', 161, '2022-11-05 12:59:20', 'Women', 'instock', 0, ''),
 ('shirt-black-and-yellow-long-sleeve-womens-shirt', 'Black and Yellow Long sleeve womens shirt', 1400, '👚Size 3XL\r\n💵Price 1400birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size 3XL\r\n💵Price 1400birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Black and Yellow', '3XL||', 'SHI-110501', 'Shirt', 1, '#Red_and_Black_Long_sleeve_womens_shirt\r\n#womens_shirt\r\n#Long_sleeve_womens_shirt\r\n#Long_sleeve_women_shirt\r\n#Long_sleeve_shirt', 'shirt-black-and-yellow-long-sleeve-womens-shirt0.webp||', 162, '2022-11-05 13:19:40', 'Women', 'instock', 1, ''),
-('shirt-men-long-sleeve-shirts', 'Men Long Sleeve Shirts', 1300, '👚Size L<br />\r\n💵Price 1300 birr<br />\r\n📨 Dm  @Marvelousfashion<br />\r\n☎️  0949075847 / 0980631614', '👚Size L<br />\r\n💵Price 1300 birr<br />\r\n📨 Dm  @Marvelousfashion<br />\r\n☎️  0949075847 / 0980631614', '100% Cotton', 'Yellow', 'L||', 'SHI-111300', 'Shirt', 1, '#Men Long Sleeve Shirts\r\n#Shirts', 'shirt-men-long-sleeve-shirts0.webp||', 164, '2022-11-13 23:00:00', 'Men', 'instock', 94, ''),
 ('shirt-black-and-yellow-long-sleeve-womens-shirt', 'Black and Yellow Long sleeve womens shirt', 1400, '👚Size 3XL\r\n💵Price 1400birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size 3XL\r\n💵Price 1400birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Black and Yellow', '3XL||', 'SHI-110501', 'Shirt', 1, '#Red_and_Black_Long_sleeve_womens_shirt\r\n#womens_shirt\r\n#Long_sleeve_womens_shirt\r\n#Long_sleeve_women_shirt\r\n#Long_sleeve_shirt', 'shirt-black-and-yellow-long-sleeve-womens-shirt0.webp||', 165, '2022-11-05 13:19:40', 'Women', 'instock', 0, ''),
-('shirt-black-and-yellow-long-sleeve-womens-shirt', 'Black and Yellow Long sleeve womens shirt', 1400, '👚Size 3XL\r\n💵Price 1400birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size 3XL\r\n💵Price 1400birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Black and Yellow', '3XL||', 'SHI-110501', 'Shirt', 1, '#Red_and_Black_Long_sleeve_womens_shirt\r\n#womens_shirt\r\n#Long_sleeve_womens_shirt\r\n#Long_sleeve_women_shirt\r\n#Long_sleeve_shirt', 'shirt-black-and-yellow-long-sleeve-womens-shirt0.webp||', 168, '2022-11-05 13:19:40', 'Women', 'instock', 0, ''),
-('pants-jeans-for-women', 'Jeans for Women', 1000, '👚Size M\r\n💵Price 1000 birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size M\r\n💵Price 1000 birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '98% cotton/2% spandex', 'Blue', 'M||', 'PAN-111103', 'Pants', 1, '#Jeans for Women\r\n#Jeans\r\n#Women', 'pants-jeans-for-women0.webp||pants-jeans-for-women1.webp||pants-jeans-for-women2.webp||', 170, '2022-11-11 12:05:57', 'Women', 'instock', 1, ''),
-('shirt-red-and-black-long-sleeve-womens-shirt', 'Red and Black Long sleeve womens shirt', 1300, '👚Size L\r\n💵Price 1300birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size L\r\n💵Price 1300birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Red and Black', 'L||', 'SHI-110502', 'Shirt', 1, '#Red_and_Black_Long_sleeve_womens_shirt\r\n#womens_shirt\r\n#Long_sleeve_womens_shirt\r\n#Long_sleeve_women_shirt\r\n#Long_sleeve_shirt', 'shirt-red-and-black-long-sleeve-womens-shirt0.webp||', 172, '2022-11-05 12:59:20', 'Women', 'instock', 4, ''),
-('shirt-red-long-sleeve-womens-shirt', 'Red Long sleeve womens shirt', 1500, '👚Size L\r\n💵Price 1500birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size L\r\n💵Price 1500birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Red', 'L||', 'SHI-110503', 'Shirt', 1, '#Red_and_Black_Long_sleeve_womens_shirt\r\n#womens_shirt\r\n#Long_sleeve_womens_shirt\r\n#Long_sleeve_women_shirt\r\n#Long_sleeve_shirt', 'shirt-red-long-sleeve-womens-shirt0.webp||', 173, '2022-11-05 13:11:15', 'Women', 'instock', 4, ''),
-('pants-jeans-for-women', 'Jeans for Women', 1000, '👚Size M\r\n💵Price 1000 birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size M\r\n💵Price 1000 birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '98% cotton/2% spandex', 'Blue', 'M||', 'PAN-111103', 'Pants', 1, '#Jeans for Women\r\n#Jeans\r\n#Women', 'pants-jeans-for-women0.webp||pants-jeans-for-women1.webp||pants-jeans-for-women2.webp||', 175, '2022-11-11 12:05:57', 'Women', 'instock', 37, ''),
-('shirt-black-and-yellow-long-sleeve-womens-shirt', 'Black and Yellow Long sleeve womens shirt', 1400, '👚Size 3XL\r\n💵Price 1400birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size 3XL\r\n💵Price 1400birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Black and Yellow', '3XL||', 'SHI-110501', 'Shirt', 1, '#Red_and_Black_Long_sleeve_womens_shirt\r\n#womens_shirt\r\n#Long_sleeve_womens_shirt\r\n#Long_sleeve_women_shirt\r\n#Long_sleeve_shirt', 'shirt-black-and-yellow-long-sleeve-womens-shirt0.webp||', 179, '2022-11-05 13:19:40', 'Women', 'instock', 9, '');
+('shirt-black-and-yellow-long-sleeve-womens-shirt', 'Black and Yellow Long sleeve womens shirt', 1400, '👚Size 3XL\r\n💵Price 1400birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size 3XL\r\n💵Price 1400birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Black and Yellow', '3XL||', 'SHI-110501', 'Shirt', 1, '#Red_and_Black_Long_sleeve_womens_shirt\r\n#womens_shirt\r\n#Long_sleeve_womens_shirt\r\n#Long_sleeve_women_shirt\r\n#Long_sleeve_shirt', 'shirt-black-and-yellow-long-sleeve-womens-shirt0.webp||', 168, '2022-11-05 13:19:40', 'Women', 'instock', 1, ''),
+('pants-jeans-for-women', 'Jeans for Women', 1000, '👚Size M\r\n💵Price 1000 birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size M\r\n💵Price 1000 birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '98% cotton/2% spandex', 'Blue', 'M||', 'PAN-111103', 'Pants', 1, '#Jeans for Women\r\n#Jeans\r\n#Women', 'pants-jeans-for-women0.webp||pants-jeans-for-women1.webp||pants-jeans-for-women2.webp||', 170, '2022-11-11 12:05:57', 'Women', 'instock', 14, ''),
+('shirt-red-and-black-long-sleeve-womens-shirt', 'Red and Black Long sleeve womens shirt', 1300, '👚Size L\r\n💵Price 1300birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size L\r\n💵Price 1300birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Red and Black', 'L||', 'SHI-110502', 'Shirt', 1, '#Red_and_Black_Long_sleeve_womens_shirt\r\n#womens_shirt\r\n#Long_sleeve_womens_shirt\r\n#Long_sleeve_women_shirt\r\n#Long_sleeve_shirt', 'shirt-red-and-black-long-sleeve-womens-shirt0.webp||', 172, '2022-11-05 12:59:20', 'Women', 'instock', 6, ''),
+('shirt-red-long-sleeve-womens-shirt', 'Red Long sleeve womens shirt', 1500, '👚Size L\r\n💵Price 1500birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size L\r\n💵Price 1500birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Red', 'L||', 'SHI-110503', 'maternity', 1, '#Red_and_Black_Long_sleeve_womens_shirt\r\n#womens_shirt\r\n#Long_sleeve_womens_shirt\r\n#Long_sleeve_women_shirt\r\n#Long_sleeve_shirt', 'shirt-red-long-sleeve-womens-shirt0.webp||', 173, '2024-02-22 17:52:21', 'Women', 'instock', 8, ''),
+('pants-jeans-for-women', 'Jeans for Women', 1000, '👚Size M\r\n💵Price 1000 birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size M\r\n💵Price 1000 birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '98% cotton/2% spandex', 'Blue', 'M||', 'PAN-111103', 'Pants', 1, '#Jeans for Women\r\n#Jeans\r\n#Women', 'pants-jeans-for-women0.webp||pants-jeans-for-women1.webp||pants-jeans-for-women2.webp||', 175, '2022-11-11 12:05:57', 'Women', 'instock', 61, ''),
+('shirt-black-and-yellow-long-sleeve-womens-shirt', 'Black and Yellow Long sleeve womens shirt', 1400, '👚Size 3XL\r\n💵Price 1400birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', '👚Size 3XL\r\n💵Price 1400birr\r\n📨 Dm  @Marvelousfashion\r\n☎️  0949075847 / 0980631614', 'Linen', 'Black and Yellow', '3XL||', 'SHI-110501', 'Shirt', 1, '#Red_and_Black_Long_sleeve_womens_shirt\r\n#womens_shirt\r\n#Long_sleeve_womens_shirt\r\n#Long_sleeve_women_shirt\r\n#Long_sleeve_shirt', 'shirt-black-and-yellow-long-sleeve-womens-shirt0.webp||', 179, '2022-11-05 13:19:40', 'Women', 'instock', 22, '');
 
 --
 -- Indexes for dumped tables
@@ -241,7 +244,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `feedbacks`
@@ -253,7 +256,7 @@ ALTER TABLE `feedbacks`
 -- AUTO_INCREMENT for table `ordered_items`
 --
 ALTER TABLE `ordered_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=416;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=434;
 
 --
 -- AUTO_INCREMENT for table `products`

@@ -255,10 +255,10 @@ if (isset($_SESSION['id'])) {
 										<?php echo ($totalcp); ?> Birr
 									</span>
 
-									<span class="mtext-110 cl2" style="display: none;" id="itemlist"><?php
+									<hide class="mtext-110 cl2" style="display: none;" id="itemlist"><?php
 																										$dataa = array_values($dataa);
 																										$jsonData = json_encode($dataa);
-																										echo ($jsonData); ?></span>
+																										echo ($jsonData); ?></hide>
 								</div>
 							</div>
 							<button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer placeorder">

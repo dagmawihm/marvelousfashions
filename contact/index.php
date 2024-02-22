@@ -31,7 +31,7 @@ if (isset($_SESSION['id'])) {
 	<section class="bg0 p-t-104 p-b-116">
 		<div class="container">
 			<div class="flex-w flex-tr">
-				<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
+				<div class="size-10 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
 					<form>
 						<h2 class="mtext-105 cl2 txt-center p-b-30">
 							Send Us A Message
@@ -51,7 +51,18 @@ if (isset($_SESSION['id'])) {
 						</button>
 					</form>
 				</div>
-				<div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
+
+				<div class="size-10 flex-w flex-col-m p-lr-53 p-tb-30 p-lr-15-lg w-full-md" style="width: 445px;">
+
+					<div class="how-bor2" style="width: 400px;">
+						<div class="hov-img0">
+							<img src="../assets/images/bu.png" class="p-lr-53" style="PADDING-LEFT: 3em; width: 400px;">
+						</div>
+
+					</div>
+				</div>
+
+				<div class="size-10 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
 					<div class="flex-w w-full p-b-42">
 						<span class="fs-18 cl5 txt-center size-211">
 							<span class="lnr lnr-map-marker"></span>
@@ -96,9 +107,10 @@ if (isset($_SESSION['id'])) {
 						</div>
 					</div>
 
-
-
 				</div>
+
+
+
 			</div>
 		</div>
 	</section>

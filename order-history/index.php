@@ -161,7 +161,7 @@ if (isset($_SESSION['id'])) {
                                     if (isset($_SESSION['id'])) {
 
 
-                                        $sqldisplayorders = "SELECT * FROM orders order by date desc";
+                                        $sqldisplayorders = "SELECT * FROM orders order by id desc";
                                         $resultdisplayorders = mysqli_query($db, $sqldisplayorders);
                                         $numofrows = mysqli_num_rows($resultdisplayorders);
                                         if (!$numofrows == 0) {
@@ -187,9 +187,9 @@ if (isset($_SESSION['id'])) {
                                     ?>
 
                                                 <tr class="table_row" id="<?php echo ($id); ?>">
-                                                    <td class="column-1"><a href="?orderid=<?php echo ($id); ?>"><?php echo ($id); ?></a></td>
-                                                    <td class="column-1"><?php echo ($total); ?> Birr</td>
-                                                    <td class="column-1"><?php echo ($numofrowsitem); ?></td>
+                                                    <td class="column-1"><a href="?orderid=<?php echo ($id); ?>"><?php echo (substr(($id), -5)); ?></a></td>
+                                                    <td class="column-1"><a href="?orderid=<?php echo ($id); ?>"><?php echo ($total); ?> Birr</a></td>
+                                                    <td class="column-1"><a href="?orderid=<?php echo ($id); ?>"><?php echo ($numofrowsitem); ?></a></td>
 
                                                     <?php
                                                     if (isset($_SESSION['id'])) {
@@ -308,12 +308,12 @@ if (isset($_SESSION['id'])) {
                             <div class="flex-w flex-t p-b-13">
                                 <div class="size-208">
                                     <span class="stext-110 cl2">
-                                        Subtotal:
+                                        Date:
                                     </span>
                                 </div>
                                 <div class="size-209">
                                     <span class="mtext-110 cl2" id="subtotal">
-                                        <?php echo ($totalprice);?> Birr
+                                        <?php echo ($date);?>
                                     </span>
                                 </div>
                             </div>
@@ -350,7 +350,7 @@ if (isset($_SESSION['id'])) {
                                             <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="address" id="address" placeholder="<?php echo ($address);?>" disabled>
                                         </div>
                                         <div class="bor8 bg0 m-b-22">
-                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="phone" id="phone" placeholder="<?php echo ($date);?>" disabled>
+                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="phone" id="phone" placeholder="<?php echo ($phone);?>" disabled>
                                         </div>
                                         <div class="bor8 m-b-30">
                                             <textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" name="msg" id="msg" disabled><?php echo ($remark);?></textarea>
