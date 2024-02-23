@@ -309,7 +309,17 @@ if (!isset($_SESSION['id'])) {
 						$image = imagecreatefrompng($file["tmp_name"][$i]);
 						break;
 					case 'webp':
-						$image = imagecreatefromwebp($file["tmp_name"][$i]);
+						$image = imagecreatefromjpeg($file["tmp_name"][$i]);
+						// Check if image creation succeeded
+						if ($image === false) {
+							// If imagecreatefromwebp() failed, assume it's not JPEG and try WebP
+							$image = imagecreatefromwebp($file["tmp_name"][$i]);
+						}
+
+						if ($image === false) {
+							// Handle the case when neither WebP nor JPEG format is supported
+							$image = imagecreatefrompng($file["tmp_name"][$i]);
+						}
 						break;
 					default:
 						// Unsupported image format

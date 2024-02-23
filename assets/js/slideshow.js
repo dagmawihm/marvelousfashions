@@ -80,5 +80,18 @@ function showSlides(n) {
 
 
 function closeGallery() {
-  alert("Gallery closed!");
+  window.location.href = "https://marvelousfashions.com/";
 }
+
+
+function clickNextButton() {
+  var nextButton = document.querySelector('.next-button');
+  if (nextButton) {
+      nextButton.click();
+  }
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  setInterval(clickNextButton, 6000);
+});

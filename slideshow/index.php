@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="../assets/images/icons/xfavicon.webp" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/icons/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../assets/images/icons/favicon_io/site.webmanifest">
     <link rel="stylesheet" href="../assets/css/slideshow.css">
-    
+
     <title>Slideshow | Marvelous Fashions</title>
 
-    
+
 </head>
+
 <body>
     <div class="gallery-container">
         <div class="upper-container">
@@ -20,57 +25,26 @@
             </div>
 
             <div class="upper-component slides-container">
-                <div class="slide-component fade">
-                    <div class="image-container">
-                        <img src="../assets/products-img/a.webp">
-                    </div>
-                </div>
+                <?php
+                include_once "../assets/inc/db.php";
+                $sqldisplayproducts = "SELECT * FROM products WHERE availability = 'instock' order by date desc LIMIT 50";
+                $resultdisplayproducts = mysqli_query($db, $sqldisplayproducts);
 
-                <div class="slide-component fade">
-                    <div class="image-container">
-                        <img src="../assets/products-img/b.webp">
-                    </div>
-                </div>
 
-                <div class="slide-component fade">
-                    <div class="image-container">
-                        <img src="../assets/products-img/c.webp">
+                while ($row = mysqli_fetch_array($resultdisplayproducts)) {
+                    $images = $row["images"];
+                    $pos = strpos($images, "||");
+                    $images = substr($images, 0, $pos);
+                ?>
+                    <div class="slide-component fade">
+                        <div class="image-container">
+                            <img src="../assets/products-img/<?php echo $images; ?>" loading="lazy">
+                        </div>
                     </div>
-                </div>
 
-                <div class="slide-component fade">
-                    <div class="image-container">
-                        <img src="../assets/products-img/d.webp">
-                    </div>
-                </div>
-
-                <div class="slide-component fade">
-                    <div class="image-container">
-                        <img src="../assets/products-img/e.webp">
-                    </div>
-                </div>
-
-                <div class="slide-component fade">
-                    <div class="image-container">
-                        <img src="../assets/products-img/f.webp">
-                    </div>
-                </div>
-
-                <div class="slide-component fade">
-                    <div class="image-container">
-                        <img src="../assets/products-img/g.webp">
-                    </div>
-                </div>
-                <div class="slide-component fade">
-                    <div class="image-container">
-                        <img src="../assets/products-img/h.webp">
-                    </div>
-                </div>
-                <div class="slide-component fade">
-                    <div class="image-container">
-                        <img src="../assets/products-img/i.webp">
-                    </div>
-                </div>
+                <?php
+                }
+                ?>
             </div>
 
             <div class="upper-component next-container">
@@ -86,33 +60,27 @@
             </div>
 
             <div class="thumbnails-container">
-                <div class="thumbnail-component">
-                    <img class="thumbnail" src="../assets/products-img/a.webp" alt='👚Size 3XL 💵Price 1400birr' onclick="goToSlide(1)" >
-                </div>
-                <div class="thumbnail-component">
-                    <img class="thumbnail" src="../assets/products-img/b.webp" alt="👚Size L 💵Price 1500birr" onclick="goToSlide(2)" >
-                </div>
-                <div class="thumbnail-component">
-                    <img class="thumbnail" src="../assets/products-img/c.webp" alt="👚Size L 💵Price 1300birr" onclick="goToSlide(3)">
-                </div>
-                <div class="thumbnail-component">
-                    <img class="thumbnail" src="../assets/products-img/d.webp" alt="👚Size L 💵Price 1500birr" onclick="goToSlide(4)">
-                </div>
-                <div class="thumbnail-component">
-                    <img class="thumbnail" src="../assets/products-img/e.webp" alt="👚Size L 💵Price 1500birr" onclick="goToSlide(5)">
-                </div>
-                <div class="thumbnail-component">
-                    <img class="thumbnail" src="../assets/products-img/f.webp" alt="👚Size L 💵Price 1500birr" onclick="goToSlide(6)">
-                </div>
-                <div class="thumbnail-component">
-                    <img class="thumbnail" src="../assets/products-img/g.webp" alt="👚Size L 💵Price 1500birr" onclick="goToSlide(7)">
-                </div>
-                <div class="thumbnail-component">
-                    <img class="thumbnail" src="../assets/products-img/h.webp" alt="👚Size L 💵Price 1500birr" onclick="goToSlide(8)">
-                </div>
-                <div class="thumbnail-component">
-                    <img class="thumbnail" src="../assets/products-img/i.webp" alt="👚Size L 💵Price 1500birr" onclick="goToSlide(9)">
-                </div>
+                <?php
+                $sqldisplayproducts = "SELECT * FROM products WHERE availability = 'instock' order by date desc LIMIT 50";
+                $resultdisplayproducts = mysqli_query($db, $sqldisplayproducts);
+                $a=0;
+                while ($row = mysqli_fetch_array($resultdisplayproducts)) {
+                    $a++;
+                    $id = $row["id"];
+
+                    $title = $row["title"];
+                    $price = $row["price"];
+
+                    $images = $row["images"];
+                    $pos = strpos($images, "||");
+                    $images = substr($images, 0, $pos);
+                ?>
+                    <div class="thumbnail-component">
+                        <img class="thumbnail" src="../assets/products-img/<?php echo $images; ?>" loading="lazy" alt='<?= strlen($title) > 20 ? substr($title, 0, 20) . '...' : $title ?> 💵Price <?php echo $price; ?> birr' onclick="goToSlide(<?php echo $a; ?>)">
+                    </div>
+                <?php
+                }
+                ?>
                 <div class="clearing-component"></div>
             </div>
         </div>
@@ -120,4 +88,5 @@
 
     <script src="../assets/js/slideshow.js"></script>
 </body>
+
 </html>
