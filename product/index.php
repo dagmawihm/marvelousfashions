@@ -163,12 +163,15 @@ function separator($data)
 						</span>
 
 						<p class="mtext-15 cl2 js-name-detail p-t-14">
-							<i class="fa-solid fa-eye"></i> <?php echo $view; ?> Views
+							<i class="fa-solid fa-eye"></i>
+							<hide>&nbsp;</hide><?php echo $view; ?> Views
 						</p>
 
-						<p class="stext-102 cl3 p-t-23">
-							<?php echo $short_description; ?>
+						<p id="short_description" class="stext-102 cl3 p-t-23">
 						</p>
+						<script>
+							document.querySelector('#short_description').innerText = `<?php echo addslashes($short_description); ?>`;
+						</script>
 
 						<div class="p-t-33">
 
@@ -389,9 +392,11 @@ function separator($data)
 
 						<div class="tab-pane fade show active" id="description" role="tabpanel">
 							<div class="how-pos2 p-lr-15-md">
-								<p class="stext-102 cl6">
-									<?php echo $long_description; ?>
+								<p id="long_description" class="stext-102 cl6">
 								</p>
+								<script>
+									document.querySelector('#long_description').innerText = `<?php echo addslashes($long_description); ?>`;
+								</script>
 							</div>
 						</div>
 

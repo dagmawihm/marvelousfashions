@@ -22,7 +22,7 @@ if (isset($_SESSION['id'])) {
 	include_once "../assets/inc/header.php";
 	?>
 
-	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('../assets/images/xbg-01.jpg');">
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('../assets/images/xbg-01.webp');">
 		<h1 class="ltext-105 cl0 txt-center">
 			Contact
 		</h1>
@@ -56,7 +56,7 @@ if (isset($_SESSION['id'])) {
 
 					<div class="how-bor2" style="width: 400px;">
 						<div class="hov-img0">
-							<img src="../assets/images/bu.png" class="p-lr-53" style="PADDING-LEFT: 3em; width: 400px;">
+							<img src="../assets/images/bu.webp" class="p-lr-53" style="PADDING-LEFT: 3em; width: 400px;">
 						</div>
 
 					</div>

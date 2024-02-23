@@ -23,9 +23,9 @@ if (isset($_SESSION['id'])) {
 	?>
 
 
-	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image:url(../assets/images/xbg-01.jpg)">
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image:url(../assets/images/xbg-01.webp)">
 		<h1 class="ltext-105 cl0 txt-center">
-			About
+			About Us
 		</h1>
 	</section>
 
@@ -46,14 +46,14 @@ if (isset($_SESSION['id'])) {
 						<p class="stext-113 cl6 p-b-26">
 						<span>Any questions?</span> 
 						Let us know in store at Megenagna 3M Building (100m down from Zefmesh) first floor No FR-05, make sure it is MARVELOUS FASHION or call us
-							on <br> <a href="tel:+251949075847">(+251) 949075847</a> or <a href="tel:+251980631614">(+251) 980-631-614</a>
+							on <br> <a href="tel:+251949075847">(+251) 949075847</a><hide>&nbsp;</hide>or<hide>&nbsp;</hide><a href="tel:+251980631614">(+251) 980-631-614</a>
 						</p>
 					</div>
 				</div>
 				<div class="col-11 col-md-5 col-lg-4 m-lr-auto">
 					<div class="how-bor1 ">
 						<div class="hov-img0">
-							<img src="../assets/images/about-01.png">
+							<img src="../assets/images/about-01.webp">
 						</div>
 					</div>
 				</div>
@@ -78,7 +78,7 @@ if (isset($_SESSION['id'])) {
 				<div class="order-md-1 col-11 col-md-5 col-lg-4 m-lr-auto p-b-30">
 					<div class="how-bor2">
 						<div class="hov-img0">
-							<img src="../assets/images/about-02.jpg">
+							<img src="../assets/images/about-02.webp">
 						</div>
 					</div>
 				</div>

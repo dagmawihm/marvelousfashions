@@ -187,7 +187,7 @@ if (isset($_SESSION['id'])) {
                                     ?>
 
                                                 <tr class="table_row" id="<?php echo ($id); ?>">
-                                                    <td class="column-1"><a href="?orderid=<?php echo ($id); ?>"><?php echo (substr(($id), -5)); ?></a></td>
+                                                    <td class="column-1"><a href="?orderid=<?php echo ($id); ?>"><hide><?php echo (substr(($id), -5)); ?></hide></a></td>
                                                     <td class="column-1"><a href="?orderid=<?php echo ($id); ?>"><?php echo ($total); ?> Birr</a></td>
                                                     <td class="column-1"><a href="?orderid=<?php echo ($id); ?>"><?php echo ($numofrowsitem); ?></a></td>
 
@@ -248,7 +248,7 @@ if (isset($_SESSION['id'])) {
                                                 ?>
 
                                                     <tr class="table_row">
-                                                        <td class="column-5"><a href="?orderid=<?php echo ($dataArray[$a]); ?>"><?php echo substr(($dataArray[$a]), -5); ?></a></td>
+                                                        <td class="column-5"><a href="?orderid=<?php echo ($dataArray[$a]); ?>"><hide><?php echo substr(($dataArray[$a]), -5); ?></hide></a></td>
                                                         <td class="column-1"><a href="?orderid=<?php echo ($dataArray[$a]); ?>"><?php echo ($total); ?> Birr</a></td>
                                                         <td class="column-1"><a href="?orderid=<?php echo ($dataArray[$a]); ?>"><?php echo ($numofrowsitem); ?></a></td>
 

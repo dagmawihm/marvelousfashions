@@ -375,9 +375,6 @@ if (isset($index) && $index == "true") {
                         <?php
                         } ?>
                         <li>
-                            <a href="blog/">Blog</a>
-                        </li>
-                        <li>
                             <a href="about/">About Us</a>
                         </li>
                         <li>
@@ -430,9 +427,6 @@ if (isset($index) && $index == "true") {
                             </li>
                         <?php
                         } ?>
-                        <li>
-                            <a href="../blog/">Blog</a>
-                        </li>
                         <li>
                             <a href="../about/">About Us</a>
                         </li>

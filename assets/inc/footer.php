@@ -69,7 +69,7 @@
                 </h4>
                 <p class="stext-107 cl7 size-201">
                     <span>Any questions? </span> Let us know in store at Megenagna 3M Building (100m down from Zefmesh) first floor No. FR-05, make sure it is MARVELOUS FASHION. or call us
-                    on <br> <a href="tel:+251949075847">(+251)949075847 </a> or <a href="tel:+251980631614"> (+251)980631614</a>
+                    on <br> <a href="tel:+251949075847">(+251)949075847 </a><hide>&nbsp;</hide>or<hide>&nbsp;</hide><a href="tel:+251980631614"> (+251)980631614</a>
                 </p>
             </div>
 
@@ -82,23 +82,23 @@
                 <ul>
                     <li class="p-b-10">
                         <a href="https://t.me/Marvelousfashions" target="_blank" class="stext-107 cl7 hov-cl1 trans-04">
-                            <i class="fa-brands fa-telegram fa-lg"></i> Telegram
+                            <i class="fa-brands fa-telegram fa-lg"></i><hide>&nbsp;</hide>Telegram
                         </a>
                     </li>
                     <li class="p-b-10">
                         <a href="https://www.tiktok.com/@marvelousfashions" target="_blank" class="stext-107 cl7 hov-cl1 trans-04">
-                            <i class="fa-brands fa-tiktok fa-lg"></i> Tiktok
+                            <i class="fa-brands fa-tiktok fa-lg"></i><hide>&nbsp;</hide>Tiktok
                         </a>
 
                     </li>
                     <li class="p-b-10">
                         <a href="https://www.instagram.com/marvelous_fashionss/" target="_blank" class="stext-107 cl7 hov-cl1 trans-04">
-                            <i class="fa-brands fa-instagram fa-lg"></i> Instagram
+                            <i class="fa-brands fa-instagram fa-lg"></i><hide>&nbsp;</hide>Instagram
                         </a>
                     </li>
                     <li class="p-b-10">
                         <a href="https://www.facebook.com/profile.php?id=100085035107783" target="_blank" class="stext-107 cl7 hov-cl1 trans-04">
-                            <i class="fa-brands fa-facebook fa-lg"></i> Facebook
+                            <i class="fa-brands fa-facebook fa-lg"></i><hide>&nbsp;</hide>Facebook
                         </a>
                     </li>
                 </ul>
@@ -126,7 +126,7 @@
 
         <div class="p-t-40">
             <p class="stext-107 cl6 txt-center">
-                Copyright &copy;2024 All rights reserved <span>|</span> Developed by <a href="https://www.linkedin.com/in/dagmawihm/" target="_blank">Dagmawi Asres</a>
+                Copyright &copy;2024 All rights reserved<span><hide>&nbsp;</hide>|<hide>&nbsp;</hide></span>Developed by<a href="https://www.linkedin.com/in/dagmawihm/" target="_blank"><hide>&nbsp;</hide>Dagmawi Asres</a>
             </p>
         </div>
 
