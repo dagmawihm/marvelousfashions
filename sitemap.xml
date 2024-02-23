@@ -36,142 +36,200 @@
   <loc>https://marvelousfashions.com/products/?cat=maternity</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
   <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
 <url>
   <loc>https://marvelousfashions.com/products/?cat=accessories</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
   <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
 <url>
   <loc>https://marvelousfashions.com/products/?cat=shirt</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
   <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
 <url>
   <loc>https://marvelousfashions.com/products/?cat=dresses</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
   <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
 <url>
   <loc>https://marvelousfashions.com/products/?cat=tops</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
   <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
 <url>
   <loc>https://marvelousfashions.com/products/?cat=bottoms</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
   <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
 <url>
   <loc>https://marvelousfashions.com/products/?cat=shoes</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
   <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
 <url>
   <loc>https://marvelousfashions.com/products/?sort=date</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
   <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
 <url>
   <loc>https://marvelousfashions.com/products/?sort=ltoh</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
   <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
 <url>
   <loc>https://marvelousfashions.com/products/?sort=htol</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
   <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
 <url>
-  <loc>https://marvelousfashions.com/products/?pricel=0&priceh=1000</loc>
+  <loc>https://marvelousfashions.com/products/?pricel=0&amp;priceh=1000</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
   <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://marvelousfashions.com/products/?pricel=1000&priceh=2500</loc>
-  <lastmod>2024-02-23T00:27:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://marvelousfashions.com/products/?pricel=2500&priceh=4500</loc>
-  <lastmod>2024-02-23T00:27:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://marvelousfashions.com/products/?pricel=4500&priceh=5500</loc>
-  <lastmod>2024-02-23T00:27:50+00:00</lastmod>
-  <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
 <url>
   <loc>https://marvelousfashions.com/products/?pricel=5500</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
   <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
 <url>
   <loc>https://marvelousfashions.com/products/?color=black</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
   <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
 <url>
   <loc>https://marvelousfashions.com/products/?color=blue</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
   <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
 <url>
   <loc>https://marvelousfashions.com/products/?color=grey</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
   <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
 <url>
   <loc>https://marvelousfashions.com/products/?color=green</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
   <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
 <url>
   <loc>https://marvelousfashions.com/products/?color=red</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
   <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
 <url>
   <loc>https://marvelousfashions.com/products/?color=white</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
   <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
 <url>
   <loc>https://marvelousfashions.com/products/?forr=kids</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
   <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
 
 <url>
   <loc>https://marvelousfashions.com/products/?forr=Women</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
 
 <url>
   <loc>https://marvelousfashions.com/products/?forr=men</loc>
   <lastmod>2024-02-23T00:27:50+00:00</lastmod>
   <priority>0.80</priority>
+  <xhtml:link 
+            rel="canonical" 
+            href="https://marvelousfashions.com/products/" 
+            xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
 </url>
-<url>
-  <loc>http://marvelousfashions.com/tel:+251949075847</loc>
-  <changefreq>yearly</changefreq>
-  <lastmod>2024-02-22</lastmod>
-</url>
-<url>
-  <loc>http://marvelousfashions.com/tel:+251980631614</loc>
-  <changefreq>yearly</changefreq>
-  <lastmod>2024-02-22</lastmod>
-</url>
+
+
 <url>
   <loc>https://marvelousfashions.com/app/marvelousfashions.apk</loc>
-  <changefreq>yearly</changefreq>
   <lastmod>2024-02-22</lastmod>
+  <priority>0.80</priority>
 </url>
-
-
-
 
 
 </urlset>
