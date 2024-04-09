@@ -43,6 +43,8 @@ $('.placeorder').on('click', function (e) {
                 var idc = id + "i";
                 document.cookie = "cart=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                 var orderHistory = getCookie("orderhistory");
+
+                
                 if (!orderHistory) {
                     setCookie("orderhistory", idc, 10 * 365);
                 } else {
@@ -50,9 +52,21 @@ $('.placeorder').on('click', function (e) {
                     document.cookie = "orderhistory=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                     setCookie("orderhistory", orderHistory, 10 * 365);
                 }
+
+                var a = document.createElement("a");
+                    //a.href = "../receipts/receipt("+idc.slice(-6, -1)+").pdf";
+                    a.href = "../assets/inc/openReceipt.php?oid="+idc.slice(-6, -1);
+                    a.target = "_blank";
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+           
                 responseDiv.html("<p style='color: green;'>Order placed successfully, We will be in touch shortly.</p>");
                 alert("Order placed successfully, We will be in touch shortly.");
-                
+                // Redirect to the home page
+                //window.location.href = "https://example.com"; // Replace "https://example.com" with your home page URL
+
+
             }
             else if (name === "") {
                 responseDiv.html("<p style='color: red;'>*Name cannot be empty.</p>");

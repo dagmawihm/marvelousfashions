@@ -34,26 +34,36 @@ if (isset($_SESSION['id'])) {
 		$for = input_sanitizer($_GET['forr']);
 		$sql = "SELECT * FROM products where forr = '$for' order by date desc";
 		$sqlwl = "SELECT * FROM products where forr = '$for' order by date desc LIMIT 16";
-		if ($for == "women") {
-			$womentab = "how-active1";
-			$alltab = '';
-		}
-		if ($for == "men") {
-			$mentab = "how-active1";
-			$alltab = '';
-		}
-		if ($for == "kids") {
-			$kidstab = "how-active1";
-			$alltab = '';
-		}
+		
 	}
 	if (isset($_GET['cat'])) {
 		$cat = input_sanitizer($_GET['cat']);
 		$sql = "SELECT * FROM products where categorie = '$cat' order by date desc";
 		$sqlwl = "SELECT * FROM products where categorie = '$cat' order by date desc LIMIT 16";
 		//$searchstyle = 'style="display: none;';
+
+		if ($cat == "maternity") {
+			$maternitytab = "how-active1";
+			$alltab = '';
+		}
+
 		if ($cat == 'shirt') {
 			$shirttab = "how-active1";
+			$alltab = '';
+		}
+
+		if ($cat == "dresses") {
+			$dressestab = "how-active1";
+			$alltab = '';
+		}
+
+		if ($cat == "tops") {
+			$topstab = "how-active1";
+			$alltab = '';
+		}
+
+		if ($cat == 'bottoms') {
+			$bottomstab = "how-active1";
 			$alltab = '';
 		}
 
@@ -132,8 +142,8 @@ if (isset($_SESSION['id'])) {
 	if (isset($_GET['search-product'])) {
 		$keyword = input_sanitizer($_GET['search-product']);
 		$searchstyle = 'style="display: none;';
-		$sql = "SELECT * FROM products where url LIKE '%$keyword%' OR title LIKE '%$keyword%' OR short_description LIKE '%$keyword%' OR long_description LIKE '%$keyword%' OR color LIKE '%$keyword%' OR size LIKE '%$keyword%' OR categorie LIKE '%$keyword%' OR tags LIKE '%$keyword%' OR forr LIKE '%$keyword%'order by date desc";
-		$sqlwl = "SELECT * FROM products where url LIKE '%$keyword%' OR title LIKE '%$keyword%' OR short_description LIKE '%$keyword%' OR long_description LIKE '%$keyword%' OR color LIKE '%$keyword%' OR size LIKE '%$keyword%' OR categorie LIKE '%$keyword%' OR tags LIKE '%$keyword%' OR forr LIKE '%$keyword%'order by date desc LIMIT 16";
+		$sql = "SELECT * FROM products where url LIKE '%$keyword%' OR title LIKE '%$keyword%' OR short_description LIKE '%$keyword%' OR long_description LIKE '%$keyword%' OR product_code LIKE '%$keyword%' OR color LIKE '%$keyword%' OR size LIKE '%$keyword%' OR categorie LIKE '%$keyword%' OR tags LIKE '%$keyword%' OR forr LIKE '%$keyword%'order by date desc";
+		$sqlwl = "SELECT * FROM products where url LIKE '%$keyword%' OR title LIKE '%$keyword%' OR short_description LIKE '%$keyword%' OR long_description LIKE '%$keyword%' OR product_code LIKE '%$keyword%' OR color LIKE '%$keyword%' OR size LIKE '%$keyword%' OR categorie LIKE '%$keyword%' OR tags LIKE '%$keyword%' OR forr LIKE '%$keyword%'order by date desc LIMIT 16";
 	}
 
 
@@ -167,22 +177,22 @@ if (isset($_SESSION['id'])) {
 		<div class="container">
 			<div class="flex-w flex-sb-m p-b-52">
 				<div class="flex-w flex-l-m filter-tope-group m-tb-10" <?php echo $searchstyle; ?>>
-					<a href="" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $alltab; ?>">
+					<a href="../products/" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $alltab; ?>">
 						All Products
 					</a>
-					<a href="?cat=maternity" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $mentab; ?>">
+					<a href="?cat=maternity" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $maternitytab; ?>">
 						Maternity
 					</a>
 					<a href="?cat=shirt" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $shirttab; ?>">
 						Shirt
 					</a>
-					<a href="?cat=dresses" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $kidstab; ?>">
+					<a href="?cat=dresses" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $dressestab; ?>">
 						Dresses
 					</a>
-					<a href="?cat=tops" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $shoestab; ?>">
+					<a href="?cat=tops" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $topstab; ?>">
 						Tops
 					</a>
-					<a href="?cat=bottoms" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $shoestab; ?>">
+					<a href="?cat=bottoms" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $bottomstab; ?>">
 						Bottoms
 					</a>
 					<a href="?cat=shoes" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $shoestab; ?>">

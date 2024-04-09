@@ -20,9 +20,7 @@
         <div class="upper-container">
             <a class="close" onclick="closeGallery()">&#10006;</a>
 
-            <div class="upper-component previous-container">
-                <a class="previous-button" onclick="updateSlide(-1)">&#10094;</a>
-            </div>
+
 
             <div class="upper-component slides-container">
                 <?php
@@ -33,12 +31,15 @@
 
                 while ($row = mysqli_fetch_array($resultdisplayproducts)) {
                     $images = $row["images"];
+                    $url = $row["url"];
                     $pos = strpos($images, "||");
                     $images = substr($images, 0, $pos);
                 ?>
                     <div class="slide-component fade">
                         <div class="image-container">
-                            <img src="../assets/products-img/<?php echo $images; ?>" loading="lazy">
+                            <a href="../product/?url=<?php echo $url; ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                <img src="../assets/products-img/<?php echo $images; ?>" loading="lazy">
+                            </a>
                         </div>
                     </div>
 
@@ -47,9 +48,7 @@
                 ?>
             </div>
 
-            <div class="upper-component next-container">
-                <a class="next-button" onclick="updateSlide(1)">&#10095;</a>
-            </div>
+
 
             <div class="clearing-component"></div>
         </div>
@@ -63,7 +62,7 @@
                 <?php
                 $sqldisplayproducts = "SELECT * FROM products WHERE availability = 'instock' order by date desc LIMIT 50";
                 $resultdisplayproducts = mysqli_query($db, $sqldisplayproducts);
-                $a=0;
+                $a = 0;
                 while ($row = mysqli_fetch_array($resultdisplayproducts)) {
                     $a++;
                     $id = $row["id"];

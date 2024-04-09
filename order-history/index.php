@@ -150,6 +150,7 @@ if (isset($_SESSION['id'])) {
                                         <th class="column-5">Order Id</th>
                                         <th class="column-1">Total</th>
                                         <th class="column-1">Number of Items</th>
+                                        <th class="column-1">Download PDF</th>
                                     </tr>
 
                                     <?php
@@ -190,6 +191,7 @@ if (isset($_SESSION['id'])) {
                                                     <td class="column-1"><a href="?orderid=<?php echo ($id); ?>"><hide><?php echo (substr(($id), -5)); ?></hide></a></td>
                                                     <td class="column-1"><a href="?orderid=<?php echo ($id); ?>"><?php echo ($total); ?> Birr</a></td>
                                                     <td class="column-1"><a href="?orderid=<?php echo ($id); ?>"><?php echo ($numofrowsitem); ?></a></td>
+                                                    <td class="column-1"><a href="../receipts/receipt(<?php echo substr(($id), -5); ?>).pdf" target="_blank">Download</a></td>
 
                                                     <?php
                                                     if (isset($_SESSION['id'])) {
@@ -251,6 +253,7 @@ if (isset($_SESSION['id'])) {
                                                         <td class="column-5"><a href="?orderid=<?php echo ($dataArray[$a]); ?>"><hide><?php echo substr(($dataArray[$a]), -5); ?></hide></a></td>
                                                         <td class="column-1"><a href="?orderid=<?php echo ($dataArray[$a]); ?>"><?php echo ($total); ?> Birr</a></td>
                                                         <td class="column-1"><a href="?orderid=<?php echo ($dataArray[$a]); ?>"><?php echo ($numofrowsitem); ?></a></td>
+                                                        <td class="column-1"><a href="../receipts/receipt(<?php echo substr(($dataArray[$a]), -5); ?>).pdf" target="_blank">Download</a></td>
 
                                                     </tr>
 

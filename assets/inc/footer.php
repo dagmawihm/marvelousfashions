@@ -140,7 +140,7 @@
         </div>
 
         <div class="p-t-40">
-            <p class="stext-107 cl6 txt-center">
+            <p class="stext-107 cl6 txt-center year-display">
                 Copyright &copy;2024 All rights reserved<span>
                     <hide>&nbsp;</hide>|<hide>&nbsp;</hide>
                 </span>Developed by<a href="https://www.linkedin.com/in/dagmawihm/" target="_blank">
@@ -195,6 +195,18 @@ if (isset($index) && $index == "true") {
 ?>
 
 <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // Select all elements with the class 'year-display'
+    var yearElements = document.querySelectorAll('.year-display');
+
+    // Get the current year
+    var currentYear = new Date().getFullYear();
+
+    // Update the text content of each year element
+    yearElements.forEach(function(element) {
+        element.textContent = element.textContent.replace(/\d{4}/g, currentYear);
+    });
+});
     // Function to set the language cookie
     function setLanguageCookie(language) {
         document.cookie = "language=" + language + "; path=/";
