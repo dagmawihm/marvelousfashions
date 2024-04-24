@@ -493,12 +493,12 @@ if (isset($index) && $index == "true") {
             </div>
             </header>
 
-            <div class="icon-bar" style="top: 82vh;">
+            <div class="icon-bar" style="top: 85%;">
                 <a href="tel:+251949075847" style="background-color: transparent;" target="_blank" title="Lets Talk">
                     <i class="fa-solid fa-phone-volume fa-shake fa-3x"></i>
                 </a>
             </div>
-            <div class="icon-bar">
+            <div class="icon-bar" style="top: 95%;">
                 <a href="https://t.me/Marvelousfashions" style="background-color: transparent;" target="_blank" class="stickytg" title="Join our Telegram Channel">
                     <i id="stgicon" class="fa-brands fa-telegram fa-4x"></i>
                 </a>
